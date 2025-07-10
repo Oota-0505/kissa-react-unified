@@ -1,0 +1,120 @@
+// Header コンポーネントのスタイル
+.header {
+  position: relative;
+  background-color: var(--background-color);
+  
+  @media (max-width: 800px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--mobile-header-height);
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.headerInner {
+  max-width: var(--max-width);
+  height: var(--header-height);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @media (max-width: 800px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative;
+  }
+}
+
+.headerLogo {
+  display: block;
+  width: 170px;
+  
+  @media (max-width: 800px) {
+    width: 100px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.toggleMenuButton {
+  display: none;
+  
+  @media (max-width: 800px) {
+    display: block;
+    width: 44px;
+    height: 34px;
+    background-image: url('/images/common/icon-menu.png');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.headerSiteMenu {
+  @media (max-width: 800px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: #ffffff;
+    background-color: var(--accent-color);
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: none;
+    
+    &.isShow {
+      display: block;
+    }
+  }
+}
+
+.siteMenu {
+  ul {
+    display: flex;
+    
+    @media (max-width: 800px) {
+      display: block;
+      text-align: center;
+    }
+  }
+  
+  li {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    @media (max-width: 800px) {
+      margin: 20px 0 0 0;
+    }
+  }
+  
+  a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--accent-color);
+      
+      @media (max-width: 800px) {
+        color: #ffffff;
+      }
+    }
+  }
+}
+

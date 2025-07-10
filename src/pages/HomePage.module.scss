@@ -1,0 +1,215 @@
+// HomePage コンポーネントのスタイル
+.main {
+  @media (max-width: 800px) {
+    padding-top: var(--mobile-header-height);
+  }
+}
+
+.firstView {
+  height: calc(100vh - var(--header-height));
+  background-image: url('/images/index/bg-main.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  
+  @media (max-width: 800px) {
+    height: calc(100vh - var(--mobile-header-height));
+    background-image: url('/images/index/bg-main-sp.jpg');
+    align-items: flex-start;
+  }
+}
+
+.firstViewText {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-bottom: 80px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 10px #4b2c14;
+  
+  @media (max-width: 800px) {
+    padding-top: 60px;
+    padding-left: 20px;
+  }
+  
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    line-height: 72px;
+    
+    @media (max-width: 800px) {
+      font-size: 36px;
+      line-height: 48px;
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    margin-top: 20px;
+    
+    @media (max-width: 800px) {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+}
+
+.quizBanner {
+  background: #f2ede4;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #c2a97a;
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #4b3b2a;
+  }
+}
+
+.quizButton {
+  display: inline-block;
+  background: #c2a97a;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #a88e6c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+}
+
+.lead {
+  max-width: var(--max-width);
+  margin: 60px auto;
+  
+  @media (max-width: 800px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  p {
+    line-height: 2;
+    text-align: center;
+    
+    @media (max-width: 800px) {
+      text-align: left;
+    }
+  }
+}
+
+.linkButtonArea {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.linkButton {
+  background-color: #f4dd64;
+  display: inline-block;
+  min-width: 180px;
+  line-height: 48px;
+  border-radius: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #d8b500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+}
+
+.recommended {
+  background-color: #f8f8f8;
+  padding-top: 45px;
+  padding-bottom: 55px;
+  
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 3px;
+      background-color: #000000;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.itemList {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
+  
+  @media (max-width: 800px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  li {
+    flex-shrink: 0;
+    width: 260px;
+    margin-left: 75px;
+    transition: transform 0.3s ease;
+    
+    @media (max-width: 800px) {
+      width: 220px;
+      margin-left: 30px;
+    }
+    
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  dl {
+    margin-top: 20px;
+  }
+  
+  dt {
+    font-weight: bold;
+  }
+  
+  dd {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 10px;
+  }
+  
+  .price {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+}
+
