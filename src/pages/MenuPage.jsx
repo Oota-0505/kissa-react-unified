@@ -2,13 +2,8 @@ import { useFadeIn, useScrollAnimation, usePageTransition } from '../hooks/useAn
 import styles from './MenuPage.module.scss'
 
 const MenuPage = () => {
-  const isLoading = usePageTransition()
   const [titleRef, titleVisible] = useFadeIn(200)
-  const [itemsRef, itemsVisible] = useScrollAnimation(0.1)
-
-  if (isLoading) {
-    return <div className="loading">Loading...</div>
-  }
+  const [menuRef, menuVisible] = useScrollAnimation(0.2)
 
   return (
     <div className="pageTransition">
@@ -22,8 +17,8 @@ const MenuPage = () => {
         </div>
         
         <ul 
-          ref={itemsRef}
-          className={`${styles.itemList} scrollFadeIn ${itemsVisible ? 'visible' : ''}`}
+          ref={menuRef}
+          className={`${styles.itemList} scrollFadeIn ${menuVisible ? 'visible' : ''}`}
         >
           <li className="hoverLift imageAnimation delay-100">
             <img src="/images/menu/img-item01.jpg" alt="アメリカーノの商品画像" />

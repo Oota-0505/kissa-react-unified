@@ -1,16 +1,11 @@
 import { Link } from 'react-router-dom'
-import { useFadeIn, useScrollAnimation, usePageTransition } from '../hooks/useAnimation'
+import { useFadeIn, useScrollAnimation } from '../hooks/useAnimation'
 import styles from './HomePage.module.scss'
 
 const HomePage = () => {
-  const isLoading = usePageTransition()
   const [heroRef, heroVisible] = useFadeIn(200)
   const [leadRef, leadVisible] = useScrollAnimation(0.2)
   const [recommendedRef, recommendedVisible] = useScrollAnimation(0.1)
-
-  if (isLoading) {
-    return <div className="loading">Loading...</div>
-  }
 
   return (
     <div className="pageTransition">

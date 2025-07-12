@@ -1,4 +1,5 @@
-import { HashRouter, Routes, Route, Outlet } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { HashRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
 import { ROUTES } from './const'
 import Header from './components/Header'
@@ -10,8 +11,27 @@ import ShopPage from './pages/ShopPage'
 import AccessPage from './pages/AccessPage'
 import QuizPage from './pages/QuizPage'
 import ResultPage from './pages/ResultPage'
+import Loading from './components/Loading/Loading'
 
 function Layout() {
+  const location = useLocation();
+  const isHome = location.pathname === '/' || location.pathname === '/#/' || location.pathname === '/kissa-react-unified/#/' || location.pathname === '/kissa-react-unified/';
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (isHome) {
+      setLoading(true);
+      const timer = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setLoading(false);
+    }
+  }, [isHome]);
+
+  if (isHome && loading) {
+    return <Loading active />;
+  }
+
   return (
     <div className="appLayout">
       <Header />

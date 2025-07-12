@@ -2,15 +2,10 @@ import { useFadeIn, useScrollAnimation, usePageTransition } from '../hooks/useAn
 import styles from './ConceptPage.module.scss'
 
 const ConceptPage = () => {
-  const isLoading = usePageTransition()
   const [titleRef, titleVisible] = useFadeIn(200)
   const [feature1Ref, feature1Visible] = useScrollAnimation(0.2)
   const [feature2Ref, feature2Visible] = useScrollAnimation(0.2)
   const [movieRef, movieVisible] = useScrollAnimation(0.2)
-
-  if (isLoading) {
-    return <div className="loading">Loading...</div>
-  }
 
   return (
     <div className="pageTransition">
