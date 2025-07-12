@@ -13,6 +13,11 @@ export default function QuizPage() {
   const isLoading = usePageTransition();
   const [containerRef, containerVisible] = useFadeIn(200);
 
+  // ページ表示時に最上部へスクロール
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleClick = (clickedIndex) => {
     if (clickedIndex === quizData[quizIndex].answerIndex) {
       setAnswerLogs(prev => [...prev, true]);
