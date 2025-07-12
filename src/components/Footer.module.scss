@@ -2,7 +2,7 @@
 .footer {
   color: #ffffff;
   background-color: var(--primary-color);
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,9 @@
   
   @media (prefers-color-scheme: dark) {
     background-color: #2a2a2a;
+  }
+  @media (max-width: 800px) {
+    padding-top: 30px;
   }
 }
 
