@@ -11,32 +11,30 @@ import ShopPage from './pages/ShopPage'
 import AccessPage from './pages/AccessPage'
 import QuizPage from './pages/QuizPage'
 import ResultPage from './pages/ResultPage'
-import Loading from './components/Loading/Loading'
+import Loading, { CoffeeLoading } from './components/Loading/Loading'
 
 function Layout() {
   const location = useLocation();
-  const isHome = location.pathname === '/' || location.pathname === '/#/' || location.pathname === '/kissa-react-unified/#/' || location.pathname === '/kissa-react-unified/';
   const [loading, setLoading] = useState(false);
 
+  // ページ遷移時に必ず最上部へスクロール
   useEffect(() => {
-    if (isHome) {
-      setLoading(true);
-      const timer = setTimeout(() => setLoading(false), 1000);
-      return () => clearTimeout(timer);
-    } else {
-      setLoading(false);
-    }
-  }, [isHome]);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
-  if (isHome && loading) {
-    return <Loading active />;
-  }
+  // ページ遷移時にローディングを3秒間表示
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <div className="appLayout">
       <Header />
       <Outlet />
       <Footer />
+      {loading && <CoffeeLoading />}
     </div>
   )
 }
