@@ -1,12 +1,15 @@
 // ConceptPage コンポーネントのスタイル
 .main {
-  @media (max-width: 800px) {
-    padding-top: var(--mobile-header-height);
-  }
+  width: 100%;
+  margin: 0;
+  padding: 0 0 60px 0;
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  background: #222;
 }
 
 .title {
-  height: 310px;
+  position: relative;
+  height: 260px;
   background-image: url('/images/concept/bg-main.jpg');
   background-repeat: no-repeat;
   background-position: center center;
@@ -15,149 +18,196 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 1px 1px 10px #4b2c14;
-  
-  h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    
-    @media (max-width: 768px) {
-      font-size: 24px;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+    border-radius: inherit;
   }
-  
+  h1, p {
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 8px #000, 0 0 4px #000;
+  }
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+    font-family: 'Montserrat', sans-serif;
+  }
   p {
-    font-size: 14px;
-    margin-top: 15px;
-    
-    @media (max-width: 768px) {
-      font-size: 12px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    @media (max-width: 600px) {
+      font-size: 1rem;
     }
   }
 }
 
 .feature {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  width: 930px;
-  max-width: 90%;
-  margin-top: 75px;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: flex-start;
-  
-  @media (max-width: 768px) {
+  max-width: 900px;
+  margin: 56px auto 56px auto;
+  padding: 32px 32px 32px 32px;
+  background: #232323;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  gap: 48px;
+  @media (max-width: 900px) {
     flex-direction: column;
-    margin-top: 40px;
+    gap: 20px;
+    padding: 16px 0;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    .featureText {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: 200px;
+    }
   }
-  
   &.reverse {
     flex-direction: row-reverse;
-    
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      .featureText {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+      }
     }
-    
     .featureText {
       margin-right: 0;
       margin-left: 40px;
-      
-      @media (max-width: 768px) {
+      @media (max-width: 900px) {
         margin-left: 0;
-        margin-bottom: 20px;
       }
     }
   }
-  
   img {
     width: 360px;
-    max-width: 100%;
-    height: auto;
-    
-    @media (max-width: 768px) {
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    background: #111;
+    @media (max-width: 900px) {
       width: 100%;
+      height: 200px;
+      max-width: 100%;
     }
   }
 }
 
 .featureText {
-  max-width: 500px;
+  flex: 1;
+  max-width: 480px;
   margin-right: 40px;
-  
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     margin-right: 0;
     margin-bottom: 20px;
     max-width: 100%;
+    width: 100%;
   }
-  
   h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    
-    @media (max-width: 768px) {
-      font-size: 20px;
-      margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #fff;
+    line-height: 1.3;
+    @media (max-width: 600px) {
+      font-size: 1.1rem;
     }
+    font-family: 'Montserrat', sans-serif;
   }
-  
   p {
-    line-height: 1.8;
-    font-size: 14px;
-    color: var(--text-color);
-    
-    @media (max-width: 768px) {
-      font-size: 13px;
-      line-height: 1.6;
+    font-size: 1.08rem;
+    line-height: 2.1;
+    color: #fff;
+    margin-bottom: 0;
+    @media (max-width: 600px) {
+      font-size: 0.92rem;
+    }
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+}
+
+.imageAnimation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 360px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    background: #111;
+    @media (max-width: 900px) {
+      width: 100%;
+      height: 200px;
+      max-width: 100%;
     }
   }
 }
 
 .movie {
-  max-width: 930px;
-  margin: 75px auto 0;
-  padding: 0 20px;
-  
-  @media (max-width: 768px) {
-    margin-top: 40px;
-  }
-  
+  max-width: 900px;
+  margin: 56px auto 0 auto;
+  padding: 32px 24px 32px 24px;
+  background: #232323;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   h2 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 30px;
-    
-    @media (max-width: 768px) {
-      font-size: 20px;
-      margin-bottom: 20px;
+    margin-bottom: 18px;
+    color: #fff;
+    @media (max-width: 600px) {
+      font-size: 1rem;
     }
   }
-  
   iframe {
     width: 100%;
-    height: 400px;
+    height: 220px;
     border: none;
-    
-    @media (max-width: 768px) {
-      height: 250px;
+    border-radius: 12px;
+    @media (max-width: 600px) {
+      height: 140px;
     }
   }
-  
   p {
     text-align: center;
-    margin-top: 20px;
-    line-height: 1.6;
-    font-size: 14px;
-    color: var(--text-color);
-    
-    @media (max-width: 768px) {
-      font-size: 13px;
-      margin-top: 15px;
+    margin-top: 16px;
+    line-height: 1.9;
+    font-size: 1.02rem;
+    color: #fff;
+    @media (max-width: 600px) {
+      font-size: 0.85rem;
     }
+    font-family: 'Noto Sans JP', sans-serif;
   }
 }
-

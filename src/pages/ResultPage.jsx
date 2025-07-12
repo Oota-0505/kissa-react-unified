@@ -1,7 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import { useFadeIn, usePageTransition } from '../hooks/useAnimation'
 import { ROUTES } from "../const";
 import styles from './ResultPage.module.scss'
@@ -50,7 +48,6 @@ export default function ResultPage() {
 
   return (
     <div className="pageTransition">
-      <Header />
       <main className={styles.main}>
         <div 
           ref={containerRef}
@@ -115,7 +112,6 @@ export default function ResultPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

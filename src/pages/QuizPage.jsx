@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import { useFadeIn, usePageTransition } from '../hooks/useAnimation'
 import quizData from "../data/quiz";
 import { ROUTES } from "../const";
@@ -49,7 +47,6 @@ export default function QuizPage() {
 
   return (
     <div className="pageTransition">
-      <Header />
       <main className={styles.main}>
         <div 
           ref={containerRef}
@@ -99,7 +96,6 @@ export default function QuizPage() {
           </Link>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

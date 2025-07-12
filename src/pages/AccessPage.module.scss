@@ -39,9 +39,10 @@
 }
 
 .map {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 40px;
+  max-width: none;
+  width: 100%;
+  margin: 60px 0;
+  padding: 0 20px;
   
   @media (max-width: 768px) {
     margin: 40px auto;
@@ -73,9 +74,10 @@
 }
 
 .contact {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 40px;
+  max-width: none;
+  width: 100%;
+  margin: 60px 0;
+  padding: 0 20px;
   
   @media (max-width: 768px) {
     margin: 40px auto;
@@ -106,7 +108,7 @@
     }
     
     .required {
-      background: #e74c3c;
+     
       color: white;
       padding: 2px 6px;
       font-size: 12px;

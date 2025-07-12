@@ -1,5 +1,3 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import { useFadeIn, useScrollAnimation, usePageTransition } from '../hooks/useAnimation'
 import styles from './MenuPage.module.scss'
 
@@ -14,7 +12,6 @@ const MenuPage = () => {
 
   return (
     <div className="pageTransition">
-      <Header />
       <main className={styles.main}>
         <div 
           ref={titleRef}
@@ -84,7 +81,6 @@ const MenuPage = () => {
           </li>
         </ul>
       </main>
-      <Footer />
     </div>
   )
 }

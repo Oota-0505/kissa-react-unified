@@ -1,5 +1,8 @@
 // MenuPage コンポーネントのスタイル
 .main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   @media (max-width: 800px) {
     padding-top: var(--mobile-header-height);
   }
@@ -42,9 +45,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 40px;
+  max-width: none;
+  width: 100%;
+  margin: 60px 0;
+  padding: 0 20px;
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -97,6 +101,7 @@
   font-weight: bold;
   color: var(--accent-color);
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .itemLabel {

@@ -1,21 +1,17 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import styles from './ShopPage.module.scss'
 
 const ShopPage = () => {
   return (
-    <>
-      <Header />
-      <main className={styles.main}>
-        <div className={styles.title}>
-          <h1>ONLINE SHOP</h1>
-          <p>オンラインショップ</p>
-        </div>
-        <div className={styles.shopContents}>
-          <div className={styles.shopItem}>
-            <div className={styles.itemGroup}>
-              <h2>GARDENING GOODS</h2>
-              <ul className={styles.itemList}>
+    <main className={styles.main}>
+      <div className={styles.title}>
+        <h1>ONLINE SHOP</h1>
+        <p>オンラインショップ</p>
+      </div>
+      <div className={styles.shopContents}>
+        <div className={styles.shopItem}>
+          <div className={styles.itemGroup}>
+            <h2>GARDENING GOODS</h2>
+            <ul className={styles.itemList}>
                 <li>
                   <a href="./shop-detail.html">
                     <img src="/images/shop/img-item01.jpg" alt="ハンドフォークの商品画像" />
@@ -88,13 +84,13 @@ const ShopPage = () => {
                     </dl>
                   </a>
                 </li>
-              </ul>
-            </div>
+            </ul>
           </div>
-          <aside className={styles.shopMenu}>
-            <div className={styles.shopMenuInner}>
-              <h2>ITEM LIST</h2>
-              <ul>
+        </div>
+        <aside className={styles.shopMenu}>
+          <div className={styles.shopMenuInner}>
+            <h2>ITEM LIST</h2>
+            <ul>
                 <li><a href="./shop-detail.html">ハンドフォーク</a></li>
                 <li><a href="./shop-detail.html">オニオンホー</a></li>
                 <li><a href="./shop-detail.html">除草ピック</a></li>
@@ -103,13 +99,11 @@ const ShopPage = () => {
                 <li><a href="./shop-detail.html">ラバーグローブ</a></li>
                 <li><a href="./shop-detail.html">種保存袋</a></li>
                 <li><a href="./shop-detail.html">クロス</a></li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </main>
-      <Footer />
-    </>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
   )
 }
 

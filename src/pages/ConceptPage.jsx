@@ -1,5 +1,3 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import { useFadeIn, useScrollAnimation, usePageTransition } from '../hooks/useAnimation'
 import styles from './ConceptPage.module.scss'
 
@@ -16,7 +14,6 @@ const ConceptPage = () => {
 
   return (
     <div className="pageTransition">
-      <Header />
       <main className={styles.main}>
         <div 
           ref={titleRef}
@@ -68,7 +65,6 @@ const ConceptPage = () => {
           <p>家具工場の跡地を改装したインダストリアルな空間に、季節の草花と優しい音楽、そしておいしいコーヒーがお客さまをお待ちしています。</p>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

@@ -60,34 +60,72 @@
 }
 
 .quizBanner {
-  background: #f2ede4;
+  background: linear-gradient(135deg, #f8e7c9 0%, #f2ede4 100%);
   text-align: center;
-  padding: 2rem 1rem;
-  margin: 2rem auto;
+  padding: 2.2rem 1.2rem 2.5rem 1.2rem;
+  margin: 2.5rem auto;
   font-family: 'Montserrat', sans-serif;
-  border: 2px solid #c2a97a;
-  
+  border-radius: 22px;
+  border: none;
+  box-shadow: 0 6px 32px rgba(194, 169, 122, 0.18), 0 1.5px 8px rgba(0,0,0,0.07);
+  position: relative;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  &::before {
+    content: '\1F381'; // 🎁
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #c2a97a;
+    filter: drop-shadow(0 2px 4px #fff6e0);
+  }
   p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1.18rem;
+    margin-bottom: 0.7rem;
     color: #4b3b2a;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 0 #fff6e0;
+  }
+  @media (max-width: 600px) {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    max-width: 98vw;
+    border-radius: 14px;
+    p {
+      font-size: 1rem;
+    }
   }
 }
 
 .quizButton {
   display: inline-block;
-  background: #c2a97a;
-  color: white;
-  padding: 0.6rem 1.2rem;
+  background: linear-gradient(90deg, #c2a97a 0%, #e6d3b3 100%);
+  color: #fff;
+  padding: 0.7rem 2.2rem;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 999px;
   font-weight: bold;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: #a88e6c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-size: 1.13rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 16px rgba(194, 169, 122, 0.18);
+  border: none;
+  transition: all 0.22s cubic-bezier(.4,2,.6,1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover, &:focus {
+    background: linear-gradient(90deg, #e6d3b3 0%, #c2a97a 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(194, 169, 122, 0.22);
+    filter: brightness(1.08);
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 }
 
@@ -116,7 +154,8 @@
 }
 
 .linkButton {
-  background-color: #f4dd64;
+  background-color: var(--accent-color);
+  color: #fff;
   display: inline-block;
   min-width: 180px;
   line-height: 48px;
@@ -124,9 +163,9 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   transition: all 0.3s ease;
-  
   &:hover {
-    background-color: #d8b500;
+    background-color: #5a4f42;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
@@ -141,13 +180,13 @@
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-    
+    color: var(--primary-color);
     &::after {
       content: '';
       display: block;
       width: 36px;
       height: 3px;
-      background-color: #000000;
+      background-color: var(--accent-color);
       margin-top: 20px;
       margin-left: auto;
       margin-right: auto;
@@ -198,18 +237,23 @@
   }
   
   dt {
+    color: var(--primary-color);
     font-weight: bold;
+    font-size: 16px;
   }
   
   dd {
+    color: var(--text-color);
     font-size: 13px;
     line-height: 20px;
     margin-top: 10px;
   }
   
   .price {
+    color: var(--accent-color);
     font-weight: bold;
-    margin-top: 15px;
+    font-size: 15px;
+    margin-top: 10px;
   }
 }
 
