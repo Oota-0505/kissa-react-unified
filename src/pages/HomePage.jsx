@@ -21,7 +21,7 @@ const HomePage = () => {
         </div>
 
         <div className={`${styles.quizBanner} scrollFadeIn ${leadVisible ? 'visible' : ''}`}>
-          <p>クイズに答えて初回500円引きクーポンをゲット</p>
+          <p>クイズに答えて<br/>初回500円引きクーポンをゲット</p>
           <Link to="/quiz" className={`${styles.quizButton} buttonAnimation`}>今すぐチャレンジ！</Link>
         </div>
 
